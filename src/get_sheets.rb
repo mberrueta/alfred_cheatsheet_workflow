@@ -1,22 +1,19 @@
 #!/usr/bin/ruby
+# frozen_string_literal: true
 
-require 'uri'
+require 'json'
 require 'net/http'
-require 'json'
+require 'uri'
 require_relative 'workflow'
-require 'json'
 
-base_path = ENV['base_url'] || 'https://vast-eyrie-73098.herokuapp.com'
+base_path = ENV['BASE_URL']
+raise 'BASE_URL env var is required' unless base_path
+
 uri = URI("#{base_path}/sheets")
 res = Net::HTTP.get_response(uri)
 result = JSON.parse(res.body)
-
 workflow = Workflow.new
-filter = ARGV[0] || '*'
-result['sheets'].each do |key|
-  next unless key.include?(filter) || filter == '*'
 
-  workflow.items << WorkflowItem.new(key)
-end
+result['sheets'].each { |k| workflow.items << WorkflowItem.new(k) }
 
 workflow.print

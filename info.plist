@@ -9,7 +9,18 @@
 	<key>connections</key>
 	<dict>
 		<key>8810B480-340A-4E77-8287-F01CF672939E</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EFABEE08-73C6-4AED-A70B-9B2723796738</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>mberrueta</string>
@@ -24,8 +35,29 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
+				<key>lastpathcomponent</key>
 				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>&gt;&gt;&gt;&gt; {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EFABEE08-73C6-4AED-A70B-9B2723796738</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttreatemptyqueryasnil</key>
@@ -35,7 +67,7 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>102</integer>
+				<integer>127</integer>
 				<key>keyword</key>
 				<string>cht</string>
 				<key>queuedelaycustom</key>
@@ -43,13 +75,16 @@
 				<key>queuedelayimmediatelyinitially</key>
 				<false/>
 				<key>queuedelaymode</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>queuemode</key>
 				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string>connecting server....</string>
 				<key>script</key>
-				<string>./src/get_sheets.rb {query}</string>
+				<string>source ~/.bashrc
+
+LANG=en_US.UTF-8 /usr/bin/ruby ./src/get_sheets.rb
+</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -57,7 +92,7 @@
 				<key>subtext</key>
 				<string>Cheatsheet</string>
 				<key>title</key>
-				<string>Cheatsheet</string>
+				<string>cht</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -70,21 +105,6 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>leftcursor</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.showalfred</string>
-			<key>uid</key>
-			<string>C3EB5FDA-F93C-46DA-BB5E-F1884E48F0A2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>asd</string>
@@ -92,22 +112,24 @@
 	<dict>
 		<key>8810B480-340A-4E77-8287-F01CF672939E</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
 			<key>xpos</key>
 			<integer>180</integer>
 			<key>ypos</key>
 			<integer>110</integer>
 		</dict>
-		<key>C3EB5FDA-F93C-46DA-BB5E-F1884E48F0A2</key>
+		<key>EFABEE08-73C6-4AED-A70B-9B2723796738</key>
 		<dict>
 			<key>xpos</key>
-			<integer>245</integer>
+			<integer>560</integer>
 			<key>ypos</key>
-			<integer>355</integer>
+			<integer>110</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
-		<key>base_url</key>
+		<key>BASE_URL</key>
 		<string>https://vast-eyrie-73098.herokuapp.com</string>
 	</dict>
 	<key>version</key>

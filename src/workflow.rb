@@ -8,13 +8,7 @@ class Workflow
   end
 
   def print
-    puts({ items: filtered_list }.to_json)
-  end
-
-  def filtered_list
-    query = ARGV[0] || '*'
-
-    items.select { |item| item.include?(query) || query == '*' }
+    $stdout.print({ items: items}.to_json)
   end
 end
 
@@ -29,15 +23,13 @@ class WorkflowItem
   def as_json(_options = {})
     {
       subtitle: @subtitle,
-      title: @title
+      title: @title,
+      valid: true,
+      arg: @title
     }
   end
 
   def to_json(*options)
     as_json(*options).to_json(*options)
-  end
-
-  def include?(filter)
-    title.include?(filter) || subtitle.include?(filter)
   end
 end
