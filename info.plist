@@ -12,13 +12,36 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>DA4A2219-A859-4D89-94D3-3F79561AA1DB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DA4A2219-A859-4D89-94D3-3F79561AA1DB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB6AFBF2-CC17-48AB-AB0C-C6009C26209C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>EFABEE08-73C6-4AED-A70B-9B2723796738</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
-				<true/>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -32,27 +55,6 @@
 	<string>Cheatseet</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>&gt;&gt;&gt;&gt; {query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>EFABEE08-73C6-4AED-A70B-9B2723796738</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -105,6 +107,93 @@ LANG=en_US.UTF-8 /usr/bin/ruby ./src/get_sheets.rb
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>CB6AFBF2-CC17-48AB-AB0C-C6009C26209C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>./src/get_shortcuts.rb $1</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>DA4A2219-A859-4D89-94D3-3F79561AA1DB</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>shortcut copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EFABEE08-73C6-4AED-A70B-9B2723796738</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>asd</string>
@@ -115,22 +204,36 @@ LANG=en_US.UTF-8 /usr/bin/ruby ./src/get_sheets.rb
 			<key>colorindex</key>
 			<integer>1</integer>
 			<key>xpos</key>
-			<integer>180</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>85</integer>
+		</dict>
+		<key>CB6AFBF2-CC17-48AB-AB0C-C6009C26209C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>495</integer>
+			<key>ypos</key>
+			<integer>85</integer>
+		</dict>
+		<key>DA4A2219-A859-4D89-94D3-3F79561AA1DB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>295</integer>
+			<key>ypos</key>
+			<integer>85</integer>
 		</dict>
 		<key>EFABEE08-73C6-4AED-A70B-9B2723796738</key>
 		<dict>
 			<key>xpos</key>
-			<integer>560</integer>
+			<integer>500</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>215</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
 		<key>BASE_URL</key>
-		<string>https://vast-eyrie-73098.herokuapp.com</string>
+		<string>https://cheatsheet-api-mb.herokuapp.com</string>
 	</dict>
 	<key>version</key>
 	<string></string>
