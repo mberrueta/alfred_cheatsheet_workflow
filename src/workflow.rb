@@ -8,7 +8,11 @@ class Workflow
   end
 
   def print
-    $stdout.print({ items: items }.to_json)
+    $stdout.print(to_json)
+  end
+
+  def to_json(options = {})
+    { items: items }.to_json(options)
   end
 
   def filter!(filter)
@@ -18,21 +22,21 @@ class Workflow
 end
 
 class WorkflowItem
-  attr_accessor :title, :subtitle
+  attr_accessor :title, :subtitle, :argument
 
-  def initialize(title, subtitle = nil)
+  def initialize(title, subtitle = nil, argument = nil)
+    @argument = argument
     @title = title
     @subtitle = subtitle || title
+    @argument ||= @title
   end
 
   def as_json(_options = {})
-    argument = @title.eql?(@subtitle) ? @title : "'#{@title}' #{@subtitle}"
-
     {
       title: @title,
       subtitle: @subtitle,
       valid: true,
-      arg: argument
+      arg: @argument
     }
   end
 
@@ -41,6 +45,7 @@ class WorkflowItem
   end
 
   def include?(filter)
-    title.include?(filter) || subtitle.include?(filter)
+    title.downcase.include?(filter.downcase) ||
+      subtitle.downcase.include?(filter.downcase)
   end
 end
