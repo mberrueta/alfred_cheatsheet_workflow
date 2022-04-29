@@ -19,6 +19,18 @@ class Workflow
     @items = items.select { |item| item.include?(filter) } if filter
     self
   end
+
+  def self.from_json(json)
+    Workflow.new.tap do |w|
+      JSON.parse(json)['items'].each do |hash|
+        w.items << WorkflowItem.new(
+          hash['title'],
+          hash['subtitle'],
+          hash['arg']
+        )
+      end
+    end
+  end
 end
 
 class WorkflowItem
