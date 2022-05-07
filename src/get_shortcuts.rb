@@ -29,11 +29,7 @@ result = FileCache.get_or_create(sheet_file) do
       shortcut['command']
     )
   end
-  workflow
+  workflow.to_json
 end
 
-if result.is_a?(Workflow)
-  workflow.filter!(filter).print
-else
-  Workflow.from_json(result).filter!(filter).print
-end
+Workflow.from_json(result).filter!(filter).print
